@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NavBar from './components/NavBar';
+import ItemList from './components/ItemList';
 const App = (
   <>
-  <NavBar></NavBar>
+  <NavBar/>
+  <div>
+  <ItemList/>
+  </div>
+ 
   </>
   );
 

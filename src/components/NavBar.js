@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import Cart from './Cart';
+import './App.css';
 
 const NavBar=() =>{ 
   return(
   <>
   <h1 className='titulo' style={{color:`blue`}}>Cerveza Irlish</h1>
-  <p>Cerveza artesanal</p>
+  <p className="p">Cerveza artesanal</p>
   <ul class="nav">
+  <Cart className="Cart"/>
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="#">Inicio</a>
   </li>
@@ -23,8 +25,5 @@ const NavBar=() =>{
   </>
   )
   } 
-  ReactDOM.render(
-    NavBar,
-    document.getElementById('root')
-  );
+ 
   export default NavBar;

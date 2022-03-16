@@ -1,0 +1,27 @@
+.carrito{
+    margin-top: 0.1%;
+    height: 7vw;
+    width: 7vw;
+    border-radius: 5%;
+    margin-left: 1155px;
+    position: absolute;
+}
+.Cart{
+
+    align-items: right;
+    justify-content: right;
+    height: 450px; }
+.p{
+    font-style: italic;
+    font-weight: 300;
+    color: #212229;
+    font-size: 2.1vw;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5%; 
+}
+
+.espacio-Nav{
+      width: auto; 
+      height: 150px; 
+}

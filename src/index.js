@@ -1,6 +1,7 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import NavBar from './components/NavBar';
-import ItemList from './components/ItemList';
+import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
 
 const stock=10;
@@ -11,13 +12,14 @@ console.log("Click", {contador});
 const App = (
   <>
     <NavBar/>
+    <ItemListContainer/>
       <div style={
          {display: 'flex', 
          flexDirection: 'column', 
          justifyContent: 'center',
          width: '200px',
         }}> 
-        <ItemList/>
+        
        
         <div style={
          {backgroundColor:' green', 
@@ -39,3 +41,5 @@ ReactDOM.render(
   App,
   document.getElementById('root')
 );
+
+

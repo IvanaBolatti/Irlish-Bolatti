@@ -9,17 +9,17 @@ const NavBar=() =>{
   <p className="p">Cerveza artesanal</p>
   <ul class="nav">
   <Cart className="Cart"/>
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+  <li className="nav-item">
+    <a className="nav-link active" aria-current="page" href="#">Inicio</a>
   </li>
-  <li class="nav-item">
+  <li className="nav-item">
     <a class="nav-link" href="#">¿Quiénes somos?</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Cervezas</a>
+  <li className="nav-item">
+    <a className="nav-link" href="#">Cervezas</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link">Contactanos</a>
+  <li className="nav-item">
+    <a className="nav-link">Contactanos</a>
   </li>
 </ul>
   </>

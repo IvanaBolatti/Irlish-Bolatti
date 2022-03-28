@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 const stock=10;
 const initial=0;
@@ -13,6 +14,8 @@ const App = (
   <>
     <NavBar/>
     <ItemListContainer/>
+    <ItemDetailContainer/>
+    
       <div style={
          {display: 'flex', 
          flexDirection: 'column', 
@@ -26,6 +29,7 @@ const App = (
           width: '200px',
           height: '110px'
            }}>
+          
           
           <ItemCount
           stock={stock}

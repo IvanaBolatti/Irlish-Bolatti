@@ -2,6 +2,7 @@
 import React from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
+import Productos from './Productos';
 
 
 const Item=({producto}) =>{
@@ -12,7 +13,7 @@ const Item=({producto}) =>{
        <div className="card-body"  >
           <h5 className="card-title" >{producto.nombre}</h5>
           <p className="card-text">{producto.category}</p>
-          <Link to={`detail/${producto.id}`}> <button className="btn btn-primary boton"> Ver más </button></Link>
+          <Link to={`itemId/${producto.id}`}> <button className="btn btn-primary boton"> Ver más </button></Link>
        </div>
        </div>  
   );

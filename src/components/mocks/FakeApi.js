@@ -7,25 +7,25 @@ const infoProductos=[
     {
       id:'0',
       nombre:'Pigmentos',
-      descrip:'Pigmentos',
+      category:'pigmentos',
       imagen:pigmentos,
     },
     {
       id:'1',
       nombre:'Colorantes',
-      descrip:'Colorantes',
+      category:'colorantes',
       imagen:colorantes,
     },
     {
       id:'2',
       nombre:'Dispersiones',
-      descrip:'Dispersiones',
+      category:'dispersiones',
       imagen:dispersiones,
     },
     {
       id:'3',
       nombre:'Varios',
-      descrip:'Varios',
+      category:'varios',
       imagen:varios, 
     }
      ];

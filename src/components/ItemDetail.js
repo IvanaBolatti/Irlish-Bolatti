@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ItemContador from "./ItemContador";
 
 
@@ -10,13 +10,17 @@ const ItemDetail = ({ item }) => {
     navigate(-1);
   }
   const [cantidad, setCantidad] = useState(1)
+  const [agregado, setAgregado] = useState(false)
   
-  const agregarAlCarrito = (cantidad ) => {
+  
+  const agregarAlCarrito = (cantidad,agregado ) => {
     const ItemToAdd = { 
       item, 
+      agregado,
       cantidad }
   }
 
+  if (setAgregado)  <Link to={`/cart`}> </Link>
   return (
 
     <div className="card" style={{ width: '18rem', marginLeft: '10%' }} >
@@ -28,10 +32,12 @@ const ItemDetail = ({ item }) => {
         <p className="card-text">Precio:$ {item.precio}</p>
 
         <ItemContador
-          max={ parseInt (item.stock)}
+          max={item.stock}
           cantidad={cantidad}
+          agregado={agregado}
           setCantidad={setCantidad}
-          onAdd={agregarAlCarrito} />
+          setAgregado={setAgregado}
+          onAdd={agregarAlCarrito(cantidad)} />
 
         <hr />
         <button className="btn btn-outline-primary" onClick={handleNavigate}>Volver</button>

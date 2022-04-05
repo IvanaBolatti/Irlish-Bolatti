@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter,Routes,Route, Navigate } from 'react-router-dom';
 import Contacto from './components/Contacto';
 import Nosotros from './components/Nosotros';
-import Productos from './components/Productos';
+import Cart from './components/Cart';
 
 const stock=10;
 const initial=0;
@@ -28,6 +27,7 @@ const App = (
       <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
       <Route path='/nosotros' element={<Nosotros/>}/>
       <Route path='/contacto' element={<Contacto/>}/>
+      <Route path='/cart' element={<Cart/>}/>
       <Route path='*' element={<Navigate to="/"/>}/>
     </Routes>
     </div>
@@ -46,11 +46,6 @@ const App = (
            }}>
           
           
-          <ItemCount
-          stock={stock}
-          initial={initial}
-          onAdd={onAdd}
-          />
         </div>
       </div>
       </BrowserRouter>

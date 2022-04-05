@@ -7,7 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter,Routes,Route, Navigate } from 'react-router-dom';
 import Contacto from './components/Contacto';
 import Nosotros from './components/Nosotros';
-
+import Productos from './components/Productos';
 
 const stock=10;
 const initial=0;
@@ -20,7 +20,7 @@ const App = (
     
     <NavBar/>
     
-   <ItemDetailContainer/>
+
    <div>
     <Routes>
       <Route path='/' element={<ItemListContainer/>}/>

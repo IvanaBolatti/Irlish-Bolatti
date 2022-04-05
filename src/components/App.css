@@ -31,11 +31,29 @@
     margin-top: 0px;
     margin-bottom: 5%; 
 }
+.img {
+  max-width: 50%;
+  height: 215px;
+  width: 150px;
+  object-fit: cover; }
 
-.espacio-Nav{
-      width: auto; 
-      height: 150px; 
+ 
+
+.espacioNavLogo{
+  width: 100%; 
+  height: auto; 
 }
+.espacioNav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+  
+.espacioNavBar{
+  width: 100%; 
+  height: 120px; 
+}
+
 .boton {
     background-color: #4708f5;
     margin-left: 40%;
@@ -49,7 +67,7 @@
 
    
 
-   .nosotros{
+   .varios{
     background-image: linear-gradient(to bottom, #924441, #fd0505);
     font-size: 2.1vw;
     color: black;
@@ -57,21 +75,28 @@
    }
    
 
-    .productos{
+    .colorante{
     background-image: linear-gradient(to bottom, #698369, #16f00e); 
     font-size: 2.1vw;
     color: black;
     font-weight: bolder;
    }
 
-   .contacto{
+   .pigmento{
     background-image: linear-gradient(to bottom, #b5b7da, #3124e6);
     font-size: 2.1vw;
     color: black;
     font-weight: bolder;
    }
 
+   .dispersion{
+    background-image: linear-gradient(to bottom, #9a637e, #ec6d0c);
+    font-size: 2.1vw;
+    color: black;
+    font-weight: bolder;
+   }
 
+  
    @keyframes titulo {
     0% {
       background-image: linear-gradient(to right, #e0dada, #945f5f);

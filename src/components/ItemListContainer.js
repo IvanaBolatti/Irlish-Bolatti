@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './App.css';
+
 import ItemList from './ItemList';
 import { getProductos } from './mocks/FakeApi';
 
@@ -27,11 +27,12 @@ const ItemListContainer=()=>{
     
      .finally(()=>setCargando(false));
    },[categoryId])
-  
+ 
 return (
   <div>
-    {cargando ? <p>Cargando...</p>: <ItemList listaProductos={listaProductos} /> }
-   
+    {
+    cargando ? <p>Cargando...</p>: <ItemList listaProductos={listaProductos} /> 
+    }
   </div>
 )
 

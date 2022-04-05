@@ -1,19 +1,44 @@
-import React from "react";
-import Productos from './Productos';
+import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+import ItemContador from "./ItemContador";
 
-const ItemDetail=({id,nombre,category,precio})=>{
-    return(
-      
-       <div className="d-flex flex-wrap justify-content-between" >
-      <div className="row row-cols-1 row-cols-md-3 g-4">
-      <div className="col"></div>
-     <h2>{nombre}</h2>
-     <h2>{category}</h2>
-     <h2>Precio: {precio} </h2>
-            
-       </div>
-       </div>
-    )
+
+const ItemDetail = ({ item }) => {
+
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    navigate(-1);
+  }
+  const [cantidad, setCantidad] = useState(1)
+  
+  const agregarAlCarrito = (cantidad ) => {
+    const ItemToAdd = { 
+      item, 
+      cantidad }
+  }
+
+  return (
+
+    <div className="card" style={{ width: '18rem', marginLeft: '10%' }} >
+      <img src={item.imagen} className="card-img-top" alt="Productos" />
+      <div className="card-body"  >
+        <h5 className="card-title" >{item.nombre}</h5>
+        <p className="card-text">{item.category}</p>
+        <p className="card-text">{item.descripcion}</p>
+        <p className="card-text">Precio:$ {item.precio}</p>
+
+        <ItemContador
+          max={ parseInt (item.stock)}
+          cantidad={cantidad}
+          setCantidad={setCantidad}
+          onAdd={agregarAlCarrito} />
+
+        <hr />
+        <button className="btn btn-outline-primary" onClick={handleNavigate}>Volver</button>
+      </div>
+    </div>
+
+  )
 }
 
 export default ItemDetail;

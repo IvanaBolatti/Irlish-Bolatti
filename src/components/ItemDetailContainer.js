@@ -1,36 +1,35 @@
 import React, { useEffect,useState } from 'react'
-import { getDetalleProductos } from './mocks/FakeDetalleProductos';
+import { getProductos } from './mocks/FakeApi';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 
+
 const ItemDetailContainer = () => {
-const [listaProductDetail,setListaProductDetail]=useState([]);
+
+const [item,setItem]=useState([]);
 const [cargando,setCargando]=useState(false)
 const {itemId}=useParams() 
-console.log(itemId)
 
 useEffect(()=> { 
   setCargando(true)
   
-  getDetalleProductos
+  getProductos
   .then((res)=>{
   if (itemId) {
-    setListaProductDetail(res.find((item)=>item.id===itemId))
+    setItem(res.find((producto)=>producto.id===itemId))
      }
      else {
-      setListaProductDetail(res)
+      setItem(res)
      }
       })
   .catch((error)=>console.log("Error"))
   .finally(()=>setCargando(false))
 },[itemId])
- console.log (listaProductDetail)
-  
+
  return (
     <div>
-       {cargando ? <p>cargando...</p> : <ItemDetail {...listaProductDetail}/>}
+       {cargando ? <p>cargando...</p> : <ItemDetail item={item} />}
     </div>
-    
   )
 
  }

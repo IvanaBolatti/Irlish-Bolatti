@@ -2,6 +2,7 @@ import React from 'react';
 import Cart from './Cart';
 import './App.css';
 import { Link } from 'react-router-dom';
+import CartwidGet from './CartwidGet';
 
 const NavBar=() =>{ 
   return(
@@ -34,6 +35,7 @@ const NavBar=() =>{
     <Link className="nav-link varios" to="/category/varios" >Varios</Link>
     </div>
     </div>
+    <CartwidGet className="cartwidGet"/>
    </nav>
    </header>
    </>

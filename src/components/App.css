@@ -54,6 +54,10 @@
   height: 120px; 
 }
 
+.cartwidGet{
+  font-size: 40px;
+}
+
 .boton {
     background-color: #4708f5;
     margin-left: 40%;

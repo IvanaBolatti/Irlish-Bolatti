@@ -23,7 +23,7 @@ const Cart=() =>{
             <p>Cantidad: {item.cantidad} </p>
             <p>Precio: {item.cantidad * item.precio } </p>
 
-           <button className='btn btn-danger' onClick={()=>remuveItem(item.id)}>
+           <button className="btn btn-danger" onClick={()=>remuveItem(item.id)}>
              <BsFillTrashFill/> 
              </button>
            <hr/>

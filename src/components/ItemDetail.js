@@ -2,25 +2,31 @@ import React from 'react';
 import { useState, useContext} from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import ItemContador  from "./ItemContador";
-import { CartContext } from './CartContext';
+import {CartContext} from './CartContext';
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({id, nombre, imagen,precio, stock, descripcion,category }) => {
   
   const {cart,addItem,isInCart}=useContext(CartContext)
   console.log (cart)
-
+  const [cantidad, setCantidad] = useState(1)
+  
   const navigate = useNavigate()
   const handleNavigate = () => {
   navigate(-1);
   }
-  const [cantidad, setCantidad] = useState(1)
-  
+ 
   
   
   const agregarAlCarrito = () => {
     const itemToAdd= { 
-      item, 
+      id,
+      nombre,
+      imagen,
+      stock, 
+      descripcion,
+      category,
       cantidad }
+
       console.log(itemToAdd)
       addItem(itemToAdd)
   }
@@ -28,22 +34,22 @@ const ItemDetail = ({ item }) => {
   
 
   return (
-
+   
     <div className="card" style={{ width: '18rem', marginLeft: '10%' }} >
-      <img src={item.imagen} className="card-img-top" alt="Productos" />
+      <img src={imagen} className="card-img-top" alt="Productos" />
       <div className="card-body"  >
-        <h5 className="card-title" >{item.nombre}</h5>
-        <p className="card-text">{item.category}</p>
-        <p className="card-text">{item.descripcion}</p>
-        <p className="card-text">Precio:$ {item.precio}</p>
+        <h5 className="card-title" >{nombre}</h5>
+        <p className="card-text">{category}</p>
+        <p className="card-text">{descripcion}</p>
+        <p className="card-text">Precio:$ {precio}</p>
 {
-  ! isInCart(item.id) 
+  ! isInCart(id) 
   ?
   <ItemContador
-  max={item.stock}
+  max={stock}
   cantidad={cantidad}
   setCantidad={setCantidad}
-  onAdd={agregarAlCarrito(cantidad)} />
+  onAdd={agregarAlCarrito} />
   : 
   <Link to="/cart" className='btn btn-success my-3'> Terminar la compra</Link>
 }

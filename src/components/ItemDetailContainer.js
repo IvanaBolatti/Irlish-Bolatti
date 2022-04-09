@@ -28,7 +28,7 @@ useEffect(()=> {
 
  return (
     <div>
-       {cargando ? <p>cargando...</p> : <ItemDetail item={item} />}
+       {cargando ? <p>cargando...</p> : <ItemDetail {...item} />}
     </div>
   )
 

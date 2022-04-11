@@ -9,7 +9,6 @@ const NavBar=() =>{
   <>
   
   <header>
-  <Link to="/"></Link> <Cart className="Cart"/>
    <nav className='nav'>
   <div className="espacioNavLogo">
    <Link to="/"><h1 className='titulo'>TASCHEM</h1></Link>
@@ -22,8 +21,10 @@ const NavBar=() =>{
  <Link className="nav-link" to="/nosotros">Nosotros</Link>
 
   <Link className="nav-link" to="/contacto" >Contacto</Link>
+  <CartwidGet className="cartwidGet"/>
   </div>
   <div className='espacioNavBar'>
+  
   <div className='espacioNav'>
   
     <Link className="nav-link colorante" to="/category/colorantes">Colorante</Link>
@@ -35,7 +36,6 @@ const NavBar=() =>{
     <Link className="nav-link varios" to="/category/varios" >Varios</Link>
     </div>
     </div>
-    <CartwidGet className="cartwidGet"/>
    </nav>
    </header>
    </>

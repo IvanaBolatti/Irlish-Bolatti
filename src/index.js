@@ -43,22 +43,16 @@ return(
         }}> 
        </div> 
        
-        <div style={
-         {backgroundColor:' green', 
-          width: '200px',
-          height: '110px'
-           }}>     
-      </div>
-
+  
       </BrowserRouter>
       </CartProvider>
          
 )
 
- }
+ };
 
  ReactDOM.render(
-  App,
+  <App/>,
   document.getElementById('root')
 );
 

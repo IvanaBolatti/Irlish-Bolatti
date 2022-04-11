@@ -4,19 +4,18 @@ import { Link, useNavigate } from "react-router-dom";
 import ItemContador  from "./ItemContador";
 import {CartContext} from './CartContext';
 
+
 const ItemDetail = ({id, nombre, imagen,precio, stock, descripcion,category }) => {
   
   const {cart,addItem,isInCart}=useContext(CartContext)
   console.log (cart)
-  const [cantidad, setCantidad] = useState(1)
+  const [cantidad, setCantidad] = useState(0)
   
   const navigate = useNavigate()
   const handleNavigate = () => {
   navigate(-1);
   }
- 
-  
-  
+   
   const agregarAlCarrito = () => {
     const itemToAdd= { 
       id,
@@ -25,10 +24,10 @@ const ItemDetail = ({id, nombre, imagen,precio, stock, descripcion,category }) =
       stock, 
       descripcion,
       category,
+      precio,
       cantidad }
 
-      console.log(itemToAdd)
-      addItem(itemToAdd)
+     cantidad>0 && addItem(itemToAdd)
   }
 
   
@@ -39,11 +38,15 @@ const ItemDetail = ({id, nombre, imagen,precio, stock, descripcion,category }) =
       <img src={imagen} className="card-img-top" alt="Productos" />
       <div className="card-body"  >
         <h5 className="card-title" >{nombre}</h5>
-        <p className="card-text">{category}</p>
-        <p className="card-text">{descripcion}</p>
         <p className="card-text">Precio:$ {precio}</p>
+        <p className="card-text">{descripcion}</p>
+        <small>Stock disponible:{stock}</small>
+        {stock===0 && <p style={{color:'red', fontWeight:"700"}}>'Sin stock!</p>}
+
+
+        
 {
-  ! isInCart(id) 
+  !isInCart(id) 
   ?
   <ItemContador
   max={stock}
@@ -51,7 +54,7 @@ const ItemDetail = ({id, nombre, imagen,precio, stock, descripcion,category }) =
   setCantidad={setCantidad}
   onAdd={agregarAlCarrito} />
   : 
-  <Link to="/cart" className='btn btn-success my-3'> Terminar la compra</Link>
+  <Link to="/cart" className="btn btn-success my-3"> Terminar la compra</Link>
 }
 
         <hr />  

@@ -20,7 +20,7 @@ const infoProductos=[
       precio: 70,
       descripcion:'dsdsdsdsdsdsdsd',
       imagen:colorantes,
-      stock: 40,
+      stock: 0,
       
     },
     {

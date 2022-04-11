@@ -1,24 +1,34 @@
 import React from 'react'
+import './App.css';
 
-const ItemContador = ({max=10, cantidad, setCantidad, onAdd}) => {
- 
-  const handleSumar= ()=>{
-    cantidad< max && setCantidad(cantidad + 1)
- }
-  const handleRestar= ()=>{
-    cantidad> 1 && setCantidad(cantidad - 1)
+const ItemContador = ({ max = 10, cantidad, setCantidad, onAdd }) => {
+
+  const handleSumar = () => {
+    cantidad < max && setCantidad(cantidad + 1)
+  }
+  const handleRestar = () => {
+    cantidad > 0 && setCantidad(cantidad - 1)
 
   }
 
-  
+
   return (
     <div>
-        <button className="btn btn-outline-primary" onClick={handleRestar}>-</button>
+        <button className={cantidad>0 ? "btn btn-outline-primary" : "btn btn-outline-danger" } 
+        onClick={handleRestar}
+        disabled={cantidad===0}>
+         -</button>
         <span className="mx-2"> {cantidad } </span>
-        <button className="btn btn-primary" onClick={handleSumar}>+</button>
+        <button className={`btn ${cantidad < max ? "btn btn-primary":"btn btn-outline-danger" }`} 
+        onClick={handleSumar}
+        disabled={cantidad===max} >
+        +</button>
         <br/>
-        <button className="btn btn-success my-2" onClick={onAdd}>Agregar al carrito</button>
-    </div>
+        <button className="btn btn-success my-2" 
+        onClick={onAdd}
+        disabled={cantidad===0}
+        >Agregar al carrito</button>
+    </div >
   )
 }
 

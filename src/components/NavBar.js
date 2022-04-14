@@ -7,7 +7,6 @@ import CartwidGet from './CartwidGet';
 const NavBar=() =>{ 
   return(
   <>
-  
   <header>
    <nav className='nav'>
   <div className="espacioNavLogo">
@@ -21,6 +20,8 @@ const NavBar=() =>{
  <Link className="nav-link" to="/nosotros">Nosotros</Link>
 
   <Link className="nav-link" to="/contacto" >Contacto</Link>
+
+
   <CartwidGet className="cartwidGet"/>
   </div>
   <div className='espacioNavBar'>

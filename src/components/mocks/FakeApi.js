@@ -5,7 +5,7 @@ import varios from '../varios.jpg';
 
 export const infoProductos=[
     {
-      id:'0',
+      
       nombre:'Amarillo 1',
       category:'pigmentos',
       precio:50,
@@ -14,7 +14,7 @@ export const infoProductos=[
       stock: 40,
     },
     {
-      id:'1',
+      
       nombre:'Ácido rojo',
       category:'colorantes',
       precio: 70,
@@ -24,7 +24,7 @@ export const infoProductos=[
       
     },
     {
-      id:'2',
+      
       nombre:'Acuosa amarilla',
       category:'dispersiones',
       precio:45,
@@ -33,7 +33,7 @@ export const infoProductos=[
       stock: 40,
     },
     {
-      id:'3',
+      
       nombre:'Concentrado',
       category:'varios',
       precio: 80,
@@ -42,7 +42,7 @@ export const infoProductos=[
       stock: 40,
     },
     {
-      id:'4',
+      
       nombre:'Azul',
       category:'pigmentos',
       precio: 50,
@@ -51,7 +51,7 @@ export const infoProductos=[
       stock: 40,
     },
     {
-      id:'5',
+      
       nombre:'Pigmento azul',
       category:'pigmentos',
       precio:40,
@@ -60,7 +60,7 @@ export const infoProductos=[
       stock: 40,
     },
     {
-      id:'6',
+      
       nombre:'Violeta de Metilo',
       category:'colorantes',
       precio:70,
@@ -69,7 +69,7 @@ export const infoProductos=[
       stock: 40,
     },
     {
-      id:'7',
+      
       nombre:'Ácido verde',
       category:'colorantes',
       precio:65, 

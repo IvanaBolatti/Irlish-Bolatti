@@ -1,29 +1,31 @@
 import React, { useEffect,useState } from 'react'
-import { getProductos } from './mocks/FakeApi';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import db from './firebase/firebase';
+import {doc,getDoc} from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
 
-const [item,setItem]=useState([]);
-const [cargando,setCargando]=useState(false)
+const [item,setItem]=useState(null);
+const [cargando,setCargando]=useState(true)
 const {itemId}=useParams() 
 
 useEffect(()=> { 
   setCargando(true)
   
-  getProductos
-  .then((res)=>{
-  if (itemId) {
-    setItem(res.find((producto)=>producto.id===itemId))
-     }
-     else {
-      setItem(res)
-     }
-      })
-  .catch((error)=>console.log("Error"))
-  .finally(()=>setCargando(false))
+  const docRef=doc(db,"character",itemId)
+
+  getDoc(docRef).then(doc=>{
+       
+       setItem({id: doc.id, ...doc.data()}) 
+      
+})
+
+.finally(()=>{
+ setCargando(false)
+}
+)
 },[itemId])
 
  return (

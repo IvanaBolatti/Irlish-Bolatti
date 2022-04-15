@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 import ItemList  from './ItemList';
-import { getProductos } from './mocks/FakeApi';
+import db from './firebase/firebase';
+import {collection,getDocs,query,where} from 'firebase/firestore';
 
 const ItemListContainer=()=>{
   const[listaProductos,setListaProductos]=useState([]);
@@ -14,18 +14,18 @@ const ItemListContainer=()=>{
    useEffect(()=>{
      setCargando(true)
 
-     getProductos
-     .then((res)=>{ 
-     if (categoryId) {
-      setListaProductos(res.filter((prod)=>prod.category===categoryId))
+     const producRef=collection(db,"character")
+     const q=categoryId ? query(producRef, where('category','==',categoryId)) : producRef
+     getDocs(q)
+     .then(resp=>{
+       const items=resp.docs.map((doc)=>({id: doc.id, ...doc.data()}))
+       setListaProductos(items) 
+     })
+     .finally(()=>{
+      setCargando(false)
      }
-     else {
-      setListaProductos(res)
-     }
-      })
-     .catch((error)=> console.log("Error") )
-    
-     .finally(()=>setCargando(false));
+     )
+
    },[categoryId])
  
 return (
@@ -33,6 +33,7 @@ return (
     {
     cargando ? <p>Cargando...</p>: <ItemList listaProductos={listaProductos} /> 
     }
+    
   </div>
 )
 

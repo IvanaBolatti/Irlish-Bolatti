@@ -14,7 +14,7 @@ const ItemListContainer=()=>{
    useEffect(()=>{
      setCargando(true)
 
-     const producRef=collection(db,"character")
+     const producRef=collection(db,"producto")
      const q=categoryId ? query(producRef, where('category','==',categoryId)) : producRef
      getDocs(q)
      .then(resp=>{

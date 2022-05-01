@@ -8,21 +8,10 @@ import Contacto from './components/Contacto';
 import Nosotros from './components/Nosotros';
 import Cart from './components/Cart';
 import { CartProvider } from './components/CartContext';
-import db from './components/firebase/firebase';
-import {addDoc, collection} from 'firebase/firestore';
-import { infoProductos } from './components/mocks/FakeApi';
 import Checkout from './components/Checkout';
 
 function App() {
- console.log ("ver",process.env)
-  const subirProductos=()=>{
-        infoProductos.forEach(async element => {
-          await addDoc(collection(db,"producto"), element)
-          
-        })
-
-  }
-
+ 
 
 return(
   
@@ -31,7 +20,7 @@ return(
     <BrowserRouter>
     
     <NavBar/>
-    <button onClick={subirProductos}>Cargar datos</button>
+    
 
    <div>
 
@@ -68,6 +57,5 @@ return(
   <App/>,
   document.getElementById('root')
 );
-
 
 

@@ -8,7 +8,6 @@ import {CartContext} from './CartContext';
 const ItemDetail = ({id, nombre, imagen,precio, stock, descripcion,category }) => {
   
   const {cart,addItem,isInCart}=useContext(CartContext)
-  console.log (cart)
   const [cantidad, setCantidad] = useState(0)
   
   const navigate = useNavigate()
@@ -34,7 +33,7 @@ const ItemDetail = ({id, nombre, imagen,precio, stock, descripcion,category }) =
 
   return (
    
-    <div className="card" style={{ width: '18rem', marginLeft: '10%' }} >
+    <div className="card bg-light text-dark" style={{ width: '18rem', marginLeft: '10%', marginTop:'3%' }} >
       <img src={imagen} className="card-img-top" alt="Productos" />
       <div className="card-body"  >
         <h5 className="card-title" >{nombre}</h5>
@@ -54,11 +53,11 @@ const ItemDetail = ({id, nombre, imagen,precio, stock, descripcion,category }) =
   setCantidad={setCantidad}
   onAdd={agregarAlCarrito} />
   : 
-  <Link to="/cart" className="btn btn-success my-3"> Terminar la compra</Link>
+  <Link to="/cart" className="btn btn-mx-4 boton"> Terminar la compra</Link>
 }
 
         <hr />  
-        <button className="btn btn-outline-primary" onClick={handleNavigate}>Volver</button>
+        <button className="btn btn-mx-4 boton" onClick={handleNavigate}>Volver</button>
       </div>
     </div>
 

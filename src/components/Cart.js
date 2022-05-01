@@ -5,12 +5,11 @@ import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import { BsFillTrashFill} from "react-icons/bs" ;
 import { Link } from 'react-router-dom';
-import Checkout from './Checkout';
+
 
 
 const Cart=() =>{ 
   const {cart,cartTotal,emtyCart,remuveItem}=useContext(CartContext)
-  console.log(cart.length)
  
   return(
   
@@ -21,7 +20,7 @@ const Cart=() =>{
          <p>Carrito vacío</p>
          <hr/>
          <h2>Volver a comprar</h2>
-         <Link to={"/"} className="btn btn-primary">Volver</Link>
+         <Link to={"/"} className="btn btn mx-3 boton">Volver</Link>
        </div>
      :
       <>
@@ -34,7 +33,7 @@ const Cart=() =>{
             <p>Cantidad: {item.cantidad} </p>
             <p>Monto: {item.cantidad * item.precio } </p>
 
-           <button className="btn btn-danger" onClick={()=>remuveItem(item.id)}>
+           <button className="btn btn mx-3 botonVaciar" onClick={()=>remuveItem(item.id)}>
              <BsFillTrashFill/> 
              </button>
            <hr/>
@@ -45,8 +44,8 @@ const Cart=() =>{
       <h3>Total:$ {cartTotal()} </h3>
       <hr/>
  
-      <button className='btn btn-danger' onClick={emtyCart}>Vaciar carrito</button>
-      <Link to="/Checkout" className='btn btn-success mx-3'>Terminar mi compra</Link>
+      <button className='btn mx-3 botonVaciar' onClick={emtyCart}>Vaciar carrito</button>
+      <Link to="/Checkout" className='btn mx-3 boton'>Terminar mi compra</Link>
       <hr/>
       </>
    }

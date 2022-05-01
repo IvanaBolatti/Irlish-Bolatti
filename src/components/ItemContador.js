@@ -14,17 +14,17 @@ const ItemContador = ({ max = 10, cantidad, setCantidad, onAdd }) => {
 
   return (
     <div>
-        <button className={cantidad>0 ? "btn btn-outline-primary" : "btn btn-outline-danger" } 
+        <button className={cantidad>0 ? "btn botonMin" : "btn btn-outline-danger" } 
         onClick={handleRestar}
         disabled={cantidad===0}>
          -</button>
-        <span className="mx-2"> {cantidad } </span>
-        <button className={`btn ${cantidad < max ? "btn btn-primary":"btn btn-outline-danger" }`} 
+        <span className="mx-2" > {cantidad } </span>
+        <button className={`btn ${cantidad < max ? "btn botonMin":"btn btn-outline-danger" }`} 
         onClick={handleSumar}
         disabled={cantidad===max} >
         +</button>
         <br/>
-        <button className="btn btn-success my-2" 
+        <button className="btn mx-5 my-3 boton " 
         onClick={onAdd}
         disabled={cantidad===0}
         >Agregar al carrito</button>

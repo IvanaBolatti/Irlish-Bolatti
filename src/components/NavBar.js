@@ -10,33 +10,39 @@ const NavBar=() =>{
   <header>
    <nav className='nav'>
   <div className="espacioNavLogo">
-   <Link to="/"><h1 className='titulo'>TASCHEM</h1></Link>
+   <Link to="/" style={ {textDecoration: "none"} }><h1 className='titulo'>TASCHEM</h1></Link>
+   <h3 className="h3">Productos Químicos</h3>
    </div>
-   <p className="p">Productos Químicos</p>
    <div className="espacioNavBar">
   
-   <Link className="nav-link" to="/producto">Productos</Link>
+   <Link className="nav-link p" to="/producto">Productos</Link>
  
- <Link className="nav-link" to="/nosotros">Nosotros</Link>
+ <Link className="nav-link p" to="/nosotros">Nosotros</Link>
 
-  <Link className="nav-link" to="/contacto" >Contacto</Link>
-
-
+  <Link className="nav-link p" to="/contacto" >Contacto</Link>
+  
   <CartwidGet className="cartwidGet"/>
+
   </div>
-  <div className='espacioNavBar'>
   
-  <div className='espacioNav'>
-  
-    <Link className="nav-link colorante" to="/category/colorantes">Colorante</Link>
- 
-    <Link className="nav-link pigmento" to="/category/pigmentos">Pigmento</Link>
-
-    <Link className="nav-link dispersion" to="/category/dispersiones" >Dispersión</Link>
-
-    <Link className="nav-link varios" to="/category/varios" >Varios</Link>
+  <div className="espacioProductos">
+  <div className="row">
+    <div className="col colorante">
+    <Link className="nav-link productos m-2 p-0" to="/category/colorantes">Colorante</Link>
+    </div>
+    <div className="col pigmento">
+    <Link className="nav-link productos m-2 p-0 " to="/category/pigmentos">Pigmento</Link>
+    </div>
+    <div className="col dispersion">
+    <Link className="nav-link  productos m-2 p-0" to="/category/dispersiones" >Dispersión</Link>
+    </div>
+    <div className="col varios">
+    <Link className="nav-link  productos m-2 p-0" to="/category/varios" >Varios</Link>
+    </div>
+   
     </div>
     </div>
+  
    </nav>
    </header>
    </>
